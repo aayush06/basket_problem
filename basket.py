@@ -129,4 +129,16 @@ class Basket:
 
 
 if __name__ == '__main__':
+    basket1 = Basket({                  # product catalog
+        "R01": ["Red Widget", 32.95],
+        "G01": ["Green Widget", 24.95],
+        "B01": ["Blue Widget", 7.95]
+        },
+        {4.95:[0,49],2.95:[50, 89]},        # delivery rule where cost is 4.95 when total_cost is b/w 0-49.9 and 2.95 when total_cost is b/w 50-89.9
+        {"R01": ["i%2==0", 32.95/2]}        # offers rule where product with code R01 every even product is of half cost
+    )
+    basket1.add_product_to_basket("B01")
+    basket1.add_product_to_basket("G01")
+    total_cost = basket1.calculate_cost()
+    print(total_cost)
     unittest.main()
