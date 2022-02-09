@@ -34,7 +34,7 @@ Execute coverage and view report.
 def __init__(self, product, delivery_rules, offer_rules) -> None:
 ```
 above method is used to initialise the Basket object with required params :\
-product -> a `dict` with key as product_code and value as `list` having first value as product_name and second as cost of single unit.
+product -> a `dict` with key as `product_code` and value as `list` having first value as `product_name` and second as `cost` of single unit.
 ```python
 {
     "R01": ["Red Widget", 32.95],
@@ -42,17 +42,17 @@ product -> a `dict` with key as product_code and value as `list` having first va
     "B01": ["Blue Widget", 7.95]
 }
 ```
-delivery_rules -> a `dict` with rules having key as cost and value as `list` having range of total_cost.
+delivery_rules -> a `dict` with rules having key as `cost` and value as `list` having `range of total_cost`.
 ```python
 {4.95: [0, 49], 2.95: [50, 89]}
 ```
-offer_rules -> a `dict` with key as product_name for which offer is valid and value as `list` having first index value as rule and second as applied cost
+offer_rules -> a `dict` with key as `product_name` for which offer is valid and value as `list` having first index value as `rule` and second as applied `cost`
 ```python
 {"R01": ["i%2==0", 32.95/2]}
 ```
 some examples for valid rules - 
 - `i%2==0, 32.95/2` => offer applicable for every even/second item and applicable cost would be half of original.
-- `i%2==0, 0` => offer applicable for every even/seconf item and applicable cost would be 0 or free.
+- `i%2==0, 0` => offer applicable for every even/second item and applicable cost would be 0 or free.
 
 ```python
 def add_product_to_basket(self, product_code) -> None:
